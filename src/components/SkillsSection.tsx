@@ -4,12 +4,12 @@ import { useRef } from 'react';
 import { Code2, Database, BarChart3, Wrench, Brain, Users } from 'lucide-react';
 
 const technicalSkills = [
-  { name: 'Python', level: 90, category: 'Languages' },
-  { name: 'SQL', level: 85, category: 'Languages' },
-  { name: 'HTML/CSS', level: 75, category: 'Languages' },
-  { name: 'Pandas & NumPy', level: 88, category: 'Libraries' },
-  { name: 'Scikit-learn', level: 80, category: 'Libraries' },
-  { name: 'Streamlit & FastAPI', level: 75, category: 'Libraries' },
+  { name: 'Python', category: 'Languages', icon: '🐍' },
+  { name: 'SQL', category: 'Languages', icon: '🗃️' },
+  { name: 'HTML/CSS', category: 'Languages', icon: '🌐' },
+  { name: 'Pandas & NumPy', category: 'Libraries', icon: '📊' },
+  { name: 'Scikit-learn', category: 'Libraries', icon: '🤖' },
+  { name: 'Streamlit & FastAPI', category: 'Libraries', icon: '⚡' },
 ];
 
 const tools = [
@@ -63,22 +63,23 @@ const SkillsSection = () => {
               <Code2 className="text-primary" size={24} />
               Technical Skills
             </h3>
-            <div className="space-y-5">
+            <div className="grid grid-cols-2 gap-4">
               {technicalSkills.map((skill, index) => (
-                <div key={skill.name}>
-                  <div className="flex justify-between mb-2">
-                    <span className="font-medium">{skill.name}</span>
-                    <span className="text-primary">{skill.level}%</span>
+                <motion.div
+                  key={skill.name}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ duration: 0.4, delay: 0.3 + index * 0.08 }}
+                  className="group relative p-4 rounded-xl bg-secondary/50 hover:bg-primary/10 border border-border/50 hover:border-primary/30 transition-all duration-300 cursor-default"
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-2xl">{skill.icon}</span>
+                    <div>
+                      <span className="font-medium text-foreground group-hover:text-primary transition-colors">{skill.name}</span>
+                      <p className="text-xs text-muted-foreground">{skill.category}</p>
+                    </div>
                   </div>
-                  <div className="skill-bar h-2">
-                    <motion.div
-                      className="skill-bar-fill"
-                      initial={{ width: 0 }}
-                      animate={isInView ? { width: `${skill.level}%` } : {}}
-                      transition={{ duration: 1, delay: 0.3 + index * 0.1 }}
-                    />
-                  </div>
-                </div>
+                </motion.div>
               ))}
             </div>
           </motion.div>
