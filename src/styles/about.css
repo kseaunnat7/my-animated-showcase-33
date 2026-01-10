@@ -1,0 +1,186 @@
+.about-section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.about-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-title {
+    font-size: 3rem;
+  }
+}
+
+.section-title-gradient {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-subtitle {
+  color: hsl(var(--muted-foreground));
+  font-size: 1.125rem;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-card {
+  background: hsla(222, 47%, 11%, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid hsla(175, 80%, 50%, 0.15);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 8px 32px hsla(0, 0%, 0%, 0.3);
+}
+
+.about-intro {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.highlight-text {
+  color: hsl(var(--primary));
+  font-weight: 500;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.info-icon {
+  color: hsl(var(--primary));
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.info-label {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-value {
+  font-weight: 500;
+  color: hsl(var(--foreground));
+}
+
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.education-icon {
+  color: hsl(var(--primary));
+}
+
+.education-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.degree-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.degree-school {
+  color: hsl(var(--primary));
+  margin-bottom: 0.25rem;
+}
+
+.degree-year {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 1rem;
+}
+
+.courses-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.courses-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.course-tag {
+  padding: 0.25rem 0.75rem;
+  background: hsl(var(--secondary));
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.interests-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.interests-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.interests-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.interest-tag {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid hsla(175, 80%, 50%, 0.3);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  color: hsl(var(--primary));
+}
