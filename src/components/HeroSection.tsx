@@ -1,27 +1,8 @@
-import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Github, Linkedin, Mail, Camera } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import '../styles/hero.css';
 
 const HeroSection = () => {
-  const [profileImage, setProfileImage] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileImage(reader.result as string);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handlePhotoClick = () => {
-    fileInputRef.current?.click();
-  };
-
   return (
     <section id="home" className="hero-section">
       <div className="hero-orb hero-orb-primary" />
@@ -29,31 +10,6 @@ const HeroSection = () => {
       
       <div className="hero-container">
         <div className="hero-content">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            className="profile-photo-container"
-          >
-            <div className="profile-photo" onClick={handlePhotoClick}>
-              <input
-                type="file"
-                ref={fileInputRef}
-                onChange={handleImageUpload}
-                accept="image/*"
-                style={{ display: 'none' }}
-              />
-              {profileImage ? (
-                <img src={profileImage} alt="Profile" />
-              ) : (
-                <div className="profile-photo-placeholder">
-                  <Camera />
-                  <span>Add Photo</span>
-                </div>
-              )}
-            </div>
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
